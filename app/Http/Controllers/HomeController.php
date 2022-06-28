@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Projet;
+
 class HomeController extends Controller
 {
     /**
@@ -23,8 +25,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('/index');
+
+        $projetCount = Projet::get()->count();
+        return view('/index', compact('projetCount'));
     }
+
     public function accueil()
     {
         return view('/accueil');

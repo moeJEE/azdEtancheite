@@ -180,7 +180,10 @@
                             <div class="col-lg-4 col-md-6 masonary-item wow reveal">
                                 <div class="portfolio-wrapper mt-30">
                                     <!--======= Single Portfolio Item Start ========-->
-                                    <a class="single-portfolio-item">
+                                    <a class="single-portfolio-item"
+                                    href="{{url('details', ['id'=>  $projet->id ])}}">
+
+                                    >
                                         <div class="single-portfolio__thumbnail">
                                         <img src="{{asset('/storage/uploads/'.$projet->images)}}"  alt="" />
 

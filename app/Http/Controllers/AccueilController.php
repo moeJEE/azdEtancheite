@@ -20,7 +20,7 @@ class AccueilController extends Controller
         return view('accueil', compact('prestations', 'categories', 'projets'));
     }
 
-    public function contact_index()
+    public function contact()
     {
         return view('contact');
     }
@@ -33,7 +33,8 @@ class AccueilController extends Controller
             'societe' => 'required',
             'email' => 'required',
             'telephone' => 'required',
-            'contact' => 'required',
+            'ville' => 'required',
+            'message' => 'required',
         ]);
 
         $devis = new Devis();
@@ -42,9 +43,24 @@ class AccueilController extends Controller
         $devis->societe = $request->societe;
         $devis->email = $request->email;
         $devis->telephone = $request->telephone;
-        $devis->contact = $request->contact;
+        $devis->ville = $request->ville;
+        $devis->message = $request->message;
 
         $devis->save();
         return redirect('/accueil');
+    }
+
+    public function projet()
+    {
+        $categories = Categorie::get();
+        $projets = Projet::get();
+
+        return view('projet', compact('categories', 'projets'));
+    }
+
+    public function details($id)
+    {
+        $projet = Projet::where('id', $id)->firstOrFail();
+        return view('details', compact('projet'));
     }
 }

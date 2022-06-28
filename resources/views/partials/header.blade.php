@@ -72,7 +72,7 @@
                                   <a href="#" ><span>Prestations</span></a>
                                 </li>
                                 <li class="has-children">
-                                  <a href="#" ><span>Projets</span></a>
+                                  <a href="{{url('/projet')}}" ><span>Projets</span></a>
                                 </li>
                                 {{-- <li class="has-children has-children--multilevel-submenu">
                                   <a href="inner-pages/architecture/services.html" ><span>Projets</span></a>

@@ -17,12 +17,12 @@
 <div class="service-content-inner-bottom section-space--pb_90">
     <div class="container">
         <div class="row">
+            @foreach ($prestations as $prestation)
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <!-- Single Service Box Start -->
-                 @foreach ($prestations as $prestation)
+                 <div class="ht-service-box style-04 text-left single-svg-icon-box">
                     
                
-                <div class="ht-service-box style-04 text-left single-svg-icon-box">
                     <div class="service-icon">
                         <img src="{{asset('/storage/uploads/'.$prestation->logo)}}"  alt="" />
                     </div>
@@ -34,8 +34,8 @@
                     </div>
                 </div> 
                 <!-- Single Service Box End -->
-                @endforeach 
             </div>
+            @endforeach 
         </div>
     </div>
 </div>

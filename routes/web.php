@@ -92,5 +92,9 @@ Route::group(['middleware' => ['auth']], function () {
 Route::get('accueil', [App\Http\Controllers\AccueilController::class, 'index'])->name('index');
 
 
-Route::get('contact', [App\Http\Controllers\AccueilController::class, 'contact_index']);
+Route::get('contact', [App\Http\Controllers\AccueilController::class, 'contact']);
 Route::post('contact', [App\Http\Controllers\AccueilController::class, 'store'])->name('store');
+
+Route::get('projet', [App\Http\Controllers\AccueilController::class, 'projet'])->name('projet');
+
+Route::get('/details/{id}', [App\Http\Controllers\AccueilController::class, 'details']);

@@ -44,7 +44,7 @@
          {{-- 4. Right Menu --}}
          @include('layouts.rightMenu')
          {{-- 5.Footer --}}
-         {{-- @include('layouts.footer') --}}
+         @include('layouts.footer')
       </div>
       <!-- ./wrapper -->
       <!-- REQUIRED SCRIPTS -->
